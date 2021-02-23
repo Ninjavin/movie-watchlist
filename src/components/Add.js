@@ -27,8 +27,8 @@ const Add = () => {
 				<input type="text" placeholder="Search for a movie" value={query} onChange={handleSearchInput} />
 			</form>
 			{results.length > 0 && (
-				results.map((movie, id) => 
-					<div>
+				results.map((movie) => (
+					<div key={movie.id}>
 						{movie.original_title}
 						{watchlist.findIndex((m) => m.id === movie.id) === -1 ? (
 							<button onClick={() => addMovieToWatchlist(movie)}>
@@ -49,8 +49,8 @@ const Add = () => {
 								Remove From Watched
 							</button>
 						)}
-
-					</div>)
+					</div>
+				))
 			)}
 		</div>
 	)

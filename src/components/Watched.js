@@ -7,12 +7,11 @@ const Watched = () => {
 
 	return (
 		<div>
+			<p>Watched</p>
 			{watched.length > 0 && (
-				watched.map((movie) => {
-					return (
-						<div>{movie.original_title}</div>
-					)
-				})
+				watched.map((movie) => 
+					<div key={movie.id}>{movie.original_title}</div>
+				)
 			)}
 		</div>
 	)

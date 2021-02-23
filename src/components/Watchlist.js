@@ -9,11 +9,9 @@ const Watchlist = () => {
 		<div>
 			<p>Watchlist</p>
 			{watchlist.length > 0 ? (
-				watchlist.map((movie) => {
-					return (
-						<div>{movie.original_title}</div>
-					)
-				})
+				watchlist.map((movie) => 
+					<div key={movie.id}>{movie.original_title}</div>
+				)
 			) : (
 				<p>Add Movies to Watchlist</p>
 			)}
